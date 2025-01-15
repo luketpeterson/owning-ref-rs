@@ -14,5 +14,9 @@ keywords = ["reference", "sibling", "field", "owning"]
 name = "owning_ref"
 
 [dependencies]
-stable_deref_trait = "1.0.0"
+stable_deref_trait = { version = "1.2.0", default-features = false, features = ["alloc"] }
 maybe-dangling = "0.1.1"
+
+[features]
+default = ["std"]
+std = ["stable_deref_trait/std"]
