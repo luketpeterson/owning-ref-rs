@@ -525,6 +525,7 @@ impl<'t, O, T: ?Sized> OwningRef<'t, O, T> {
     /// The new owner type needs to still contain the original owner in some way
     /// so that the reference into it remains valid. This function is marked unsafe
     /// because the user needs to manually uphold this guarantee.
+    #[deprecated(since = "0.6.0", note = "unsafe function. can leave invalid references")]
     pub unsafe fn map_owner<F, P>(self, f: F) -> OwningRef<'t, P, T>
         where O: StableAddress,
               P: StableAddress,
@@ -582,6 +583,7 @@ impl<'t, O, T: ?Sized> OwningRef<'t, O, T> {
     ///     assert_eq!(*owning_refs[1], 1);
     /// }
     /// ```
+    #[deprecated(since = "0.6.0", note = "unsafe function. can leave invalid references")]
     pub fn erase_owner<'a>(self) -> OwningRef<'t, O::Erased, T>
         where O: IntoErased<'a>,
     {
@@ -786,6 +788,7 @@ impl<'t, O, T: ?Sized> OwningRefMut<'t, O, T> {
     /// The new owner type needs to still contain the original owner in some way
     /// so that the reference into it remains valid. This function is marked unsafe
     /// because the user needs to manually uphold this guarantee.
+    #[deprecated(since = "0.6.0", note = "unsafe function. can leave invalid references")]
     pub unsafe fn map_owner<F, P>(self, f: F) -> OwningRefMut<'t, P, T>
         where O: StableAddress,
               P: StableAddress,
@@ -843,6 +846,7 @@ impl<'t, O, T: ?Sized> OwningRefMut<'t, O, T> {
     ///     assert_eq!(*owning_refs_mut[1], 1);
     /// }
     /// ```
+    #[deprecated(since = "0.6.0", note = "unsafe function. can leave invalid references")]
     pub fn erase_owner<'a>(self) -> OwningRefMut<'t, O::Erased, T>
         where O: IntoErased<'a>,
     {
