@@ -1,7 +1,7 @@
 [package]
-name = "safer_owning_ref"
+name = "slim_owning_ref"
 version = "0.6.0"
-authors = ["Marvin Löbel <loebel.marvin@gmail.com>", "Noam Ta Shma noam.tashma@gmail.com"]
+authors = ["Marvin Löbel <loebel.marvin@gmail.com>", "Noam Ta Shma <noam.tashma@gmail.com>", "Luke Peterson <luke@infoplatter.com>"]
 license = "MIT"
 
 description = "A library for creating references that carry their owner with them."
